@@ -1,0 +1,5 @@
+{
+  "api_key": "votre_clé_api_wavespeed_ici",
+  "lora_path": "chemin/vers/votre/image_lora.jpg",
+  "output_folder": "C:/Users/VotreNom/WaveSpeed_Images"
+}
