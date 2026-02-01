@@ -1,96 +1,74 @@
-# WaveSpeed Image Generator for Leila
+# WaveSpeed Generator pour Leila
 
-Logiciel Windows pour générer des images via l'API WaveSpeed (Nano Banana Pro) avec organisation automatique des fichiers.
+Générateur d'images simple avec interface graphique.
 
-## 🎯 Fonctionnalités
+## 🚀 Utilisation SIMPLE (sans .exe)
 
-- ✅ Interface graphique simple (Windows)
-- ✅ Génération d'images A et B (variante img2img)
-- ✅ Organisation automatique : 1 dossier = 2 images + caption
-- ✅ Pas de perte de qualité (2K, 9:16)
-- ✅ Historique des générations
-- ✅ Export .exe autonome
+### 1. Installer Python
+- Télécharger : https://python.org/downloads
+- Cocher "Add Python to PATH" pendant l'installation
 
-## 📁 Structure des dossiers générés
+### 2. Télécharger ce dossier
+- Télécharger le ZIP depuis GitHub
+- Extraire dans un dossier
 
+### 3. Installer les dépendances
+Ouvrir un terminal (cmd) dans le dossier :
 ```
-MesImages/
-├── 2026-02-01_14-30-00-post1/
-│   ├── A.jpg (image principale)
-│   ├── B.jpg (variante)
-│   └── caption.txt
-├── 2026-02-01_14-35-22-post2/
-│   ├── A.jpg
-│   ├── B.jpg
-│   └── caption.txt
-└── ...
+pip install requests
 ```
 
-## 🚀 Installation
-
-### Option 1 : Utiliser l'exécutable (.exe)
-1. Télécharger `WaveSpeedGenerator.exe` dans les Releases
-2. Double-cliquer pour lancer
-3. Entrer votre clé API WaveSpeed
-4. Commencer à générer !
-
-### Option 2 : Depuis le code source
-```bash
-# Cloner le repo
-git clone https://github.com/PierreOpenClaw/wavespeed-generator.git
-cd wavespeed-generator
-
-# Installer les dépendances
-pip install -r requirements.txt
-
-# Lancer
+### 4. Lancer le logiciel
+```
 python main.py
 ```
 
-## 📦 Créer l'exécutable (.exe)
-
-```bash
-# Installer PyInstaller
-pip install pyinstaller
-
-# Créer l'exécutable
-pyinstaller --onefile --windowed --icon=icon.ico main.py
-
-# L'exécutable sera dans dist/WaveSpeedGenerator.exe
-```
-
-## ⚙️ Configuration
+## 📝 Configuration
 
 Créer un fichier `config.json` :
 ```json
 {
-  "api_key": "votre_clé_api_wavespeed",
-  "lora_path": "chemin/vers/image_lora.jpg",
-  "output_folder": "chemin/vers/dossier_sortie"
+  "api_key": "TA_CLE_API_WAVESPEED",
+  "lora_path": "C:/chemin/vers/ton/image_lora.jpg",
+  "output_folder": "C:/Users/TonNom/Images"
 }
 ```
 
-## 📝 Utilisation
+## 🎯 Fonctionnement
 
-1. **Lancer le logiciel**
-2. **Entrer le Prompt A** (image principale)
-3. **Entrer le Prompt B** (variante - changements mineurs)
-4. **Entrer la Caption** (texte pour Threads)
-5. **Cliquer "Générer les 2 images"**
-6. **Attendre** (2-3 minutes)
-7. **Récupérer** les images dans le dossier créé
+1. Lancer : `python main.py`
+2. Entrer la clé API
+3. Choisir l'image LoRa
+4. Coller Prompt A (image principale)
+5. Coller Prompt B (variante)
+6. Coller la caption
+7. Cliquer "Générer"
+8. Les images apparaissent dans le dossier de sortie
 
-## 🔑 Obtenir une clé API WaveSpeed
+## 📁 Structure créée
+
+```
+Images/
+├── 2026-02-01_22-30-00-post/
+│   ├── A.jpg
+│   ├── B.jpg
+│   ├── caption.txt
+│   └── prompts.txt
+└── ...
+```
+
+## ❓ Problèmes ?
+
+- **"python n'est pas reconnu"** → Réinstaller Python avec "Add to PATH"
+- **"Module requests introuvable"** → Lancer `pip install requests`
+
+## 🔑 Clé API WaveSpeed
 
 1. Aller sur https://wavespeed.ai
-2. Créer un compte
-3. Générer une clé API dans les paramètres
-4. Copier-coller dans le logiciel
-
-## 📞 Support
-
-Problèmes ? Questions ? Ouvrir une issue sur GitHub.
+2. Créer compte
+3. Paramètres → API Keys
+4. Copier la clé
 
 ---
 
-**Développé pour Leila 💜**
+**Pas besoin de créer d'.exe, tu lances juste `python main.py` !** 🎉
